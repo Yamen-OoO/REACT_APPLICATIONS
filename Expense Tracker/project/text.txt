@@ -1,0 +1,8 @@
+we used usecontext , usestate , useReducer , contextApi
+
+make the us componets with the simple states(text , amount)
+make the contextApi
+make the useReducer with its store and function
+
+use the globalContext in all the componets ... but first provid the globalContext to the whole applicaiton
+then we can use them
