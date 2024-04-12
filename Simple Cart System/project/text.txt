@@ -1,0 +1,16 @@
+to build a simple cart system
+we are using routes , contextapi , usestate , componets
+
+
+first make the routes pages
+make a folder for pages 
+make a folder for componets
+make the css file of each page the the same folder of the pages
+then make simple ui of the shop and build the componets
+
+
+make a folder for images (assets)
+make a file for the data like arrays and objects to be used in the contextapi and anywhere to map on it
+then make the context with the states(object) and the functions such as (cartItems , addtocart , removefromcart)
+then provide the context into the pages i want and import them
+use the functions and state object .... that the context provides it to us 
