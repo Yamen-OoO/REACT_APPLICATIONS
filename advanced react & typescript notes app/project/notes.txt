@@ -1,0 +1,29 @@
+- to make vite application we run ... npm create vite , we choose react , and typescript , cd project , npm install (then the application is ready now)
+- to run the application we run npm run dev 
+
+
+
+- nested routes
+    <Routes>
+      <Route path='/' element={<h1>hi</h1>} />
+      <Route path='/new' element={<h1>New</h1>} />
+      <Route path='/:id'>
+        <Route index element={<h1>Show</h1>} />   /// index is the start ....like /1 ,  /2
+        <Route path='edit' element={<h1>Edit</h1>} /> /// nested like /1/edit , /2/edit
+      </Route>
+      <Route path='*' element={<Navigate to="/" />} /> /// any other routes we Navigate to path /
+    </Routes>
+
+
+
+- we install react-select >>>> to write tags and seleect tags easly 
+
+
+
+we install ....npm i uuid ... to make strings id
+
+
+
+
+
+
