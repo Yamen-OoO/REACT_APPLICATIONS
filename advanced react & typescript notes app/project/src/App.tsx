@@ -10,6 +10,10 @@ import { NoteLayout } from './NoteLayout.tsx'
 import { Note } from './Note.tsx'
 import { EdtiNote } from './Edit.tsx'
 
+
+
+// ^ TYPES
+
 export type Note = {
   id: string
 } & NoteData
@@ -45,15 +49,17 @@ function App() {
   const [tags, setTags] = useLocalStorge<Tag[]>("Tags", [])
 
 
-  const notesWithTags = useMemo(() => {
+  const notesWithTags = useMemo(() => 
     return notes.map(note => {
       return { ...note, tags: tags.filter(tag => note.tagIds.includes(tag.id)) }
     })
     // [{} , {} , {}] notes .... each note has tags property ..... its value equal to tags that are in the select input
-
+    
   }, [notes, tags])
-
-
+  
+  
+  //^ Basic Functions   
+  
   function onCreateNote({ tags, ...data }: NoteData) {
     setNotes(prevNotes => {
       return [
