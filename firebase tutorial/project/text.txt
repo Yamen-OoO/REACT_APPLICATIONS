@@ -1,0 +1,36 @@
+we made fb project
+npm install firebase
+to use fb hosting we should download CLI ... npm install -g firebase-tools
+
+
+
+we make folder config ... and firebase.js ... contains the config info of out app , also to init it , and init the authentication service
+to our app .... and use the variable auth as service
+
+with each service ... with use the app var
+
+
+//start from Auth component 
+auth variable helps method to work
+in firebase alot of stuff reutnred promisees .... so we use async and await , catch
+we make , signup , logout , login with google functions 
+when user loged in our signed in , logout ... we redirect the page ... using routing
+
+
+//Firebase Store (cloud)
+we create database in prodouction mode , .... we can also update the rules ... like who can update edit delete or read from the database
+collection ... like comments , users , movies
+collection is the table
+document is a row of a table
+after we make the collection in the dashboard , we init db service in firebase.js
+
+
+FirebaseError: Missing or insufficient permissions. // this error ocurs when we havent set the rules for our firestore database
+becasue it is in the prodouction mode .... more securtiy it is ... till we set the rules read , write to true
+
+
+
+when we add a movie we use addDoc() which retrun a promise , also it generatre a random id for me 
+
+
+if we want to delete a movie we use deleteDoc() , by using the id of the movie and we should know what is the doc , by using doc()
