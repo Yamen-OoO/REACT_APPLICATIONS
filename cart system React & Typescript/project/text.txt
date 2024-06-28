@@ -1,0 +1,46 @@
+there are tow ways to export files in js
+default export .... which its ... you can only export one value or data from the entire file 
+this means when you want to import it ... you dont have to use {}
+
+name export .... which its .... you can export more than one value or data from the file
+when you import these named exports into other files , you have to use the exact name or you can rename it useing (as) , and use {} if you want to import more than 
+one thing 
+you can use them togehter
+
+
+utilites folder ..... is like a folder contains small funcitons that reuturn data , number , values , not jsx ...for jsx we  use componets
+such as formater for currency , weather
+
+
+                    {quantity === 0 ? (<Button>+ Add to cart</Button>) : null}
+
+
+                    {cartItems.map(item => (
+                        <CartItem key={item.id} {...item} />
+                    ))}
+
+
+
+                {storeitems.map((item) => (
+                    <Col key={item.id}>
+                        <StoreItem {...item} />
+                    </Col>
+                ))}
+
+
+         <shoppingCartContext.Provider value={{ getItemQuantity, increaseItemQuantity, decreaseItemQuantity, removeFromCart, openCart, closeCart, cartItems, cartQuantity }}>
+            {children}
+            <ShopingCart isOpen={isOpen} />
+        </shoppingCartContext.Provider>
+
+
+                {cartQuantity > 0 && (
+                    <Button onClick={openCart} className='position-relative' style={{ width: '3rem', height: "3rem" }}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+                        <div className='bg-danger text-white d-flex justify-content-center align-items-center position-absolute rounded-circle' style={{ width: "1.5rem", height: "1.5rem", bottom: "0", right: '0', transform: "translate(25% , 25%)" }}>
+                            {cartQuantity}
+                        </div>
+                    </Button>
+                )}
