@@ -1,0 +1,89 @@
+the project ==> each budgets card has list of expenses that show its sum value (this budget is a catagort) , if we delete this budget 
+this list of expenses inside it ... will be pass to unCategorized card and sum its value
+
+we install bootstarp , uuid to make custom id
+
+
+we can make comp like this to add children inside it
+        <BudgetCart>
+          
+        </BudgetCart>
+
+
+
+you can add classes to a certin element when condtion occurs 
+  const classNames = []
+    if(amount > max){
+        classNames.push('bg-danger' , 'bg-opacity-10')
+    }
+    else if (gray){
+        classNames.push('bg-light')
+    }
+    return (
+        <Card className={classNames.join(' ')}>
+        </Card>
+
+
+when you build your context
+first build the mainfunciton , provder , context , then for better practice specify the values and function you want to 
+provide inside vlaue ={{one , tow , three}}
+.... like prepare one tow three ,
+it may be one is a state , tow is state too ,,,, three is a function that updates (add , delete) the value of one ..... no DS
+
+
+
+    filter an array of objects from a specific object
+
+    function deleteBudget({id}) {
+        setBudgets(prevBudgets =>{
+            return prevBudgets.filter(budget => budget.id !== id)
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+you can use ref to ref to value and store it in a varaiblae instead of state 
+
+ const nameRef = useRef()
+    const maxRef = useRef()
+    function handleSubmit(e){
+        e.preventDefault()
+        addBudget(
+            {
+                name : nameRef.current.value,
+                max : parseFloat(maxRef.current.value)
+            }
+        )
+    }
+    return (
+        <Modal show={show} onHide={handleClose}>
+            <Form onSubmit={handleSubmit}>
+                <Modal.Header closeButton>
+                    <Modal.Title>New Budget</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form.Group className="mb-3" controlId='name'>
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control ref={nameRef} type='text' required />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId='max'>
+                        <Form.Label>Maximum Spending </Form.Label>
+                        <Form.Control ref={maxRef} type='number' min={0} step={.01} required />
+
+
+
+
+
+
+                                           {max && (
+                            <span span className='text-muted fs-6 ms-1'>
+                                / {currentForatter.format(max)}
+                            </span>
+                        )}
